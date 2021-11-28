@@ -7,7 +7,7 @@ using UseCases.Models;
 
 namespace ComputerShop.Models.ViewModels.Repairs
 {
-    public class RepairViewModel
+    public class RepairByGuaranteeViewModel
     {
         public int RepairId { get; set; }
         public int GoodsTypeId { get; set; }
@@ -20,17 +20,17 @@ namespace ComputerShop.Models.ViewModels.Repairs
 
     public static partial class ViewModelMapperExtensions
     {
-        public static RepairViewModel AsViewModel(this RepairDto dto)
+        public static RepairByGuaranteeViewModel AsViewModel(this RepairByGuaranteeDto byGuaranteeDto)
         {
-            return new RepairViewModel()
+            return new RepairByGuaranteeViewModel()
             {
-                Code = dto.Code,
-                GoodsTypeId = dto.GoodsTypeId,
-                HaveGuarantee = dto.HaveGuarantee,
-                Price = dto.Price,
-                ProductCodeId = dto.ProductCodeId,
-                RepairId = dto.RepairId,
-                RepairStage = dto.RepairStage
+                Code = byGuaranteeDto.Code,
+                GoodsTypeId = byGuaranteeDto.GoodsTypeId,
+                HaveGuarantee = byGuaranteeDto.HaveGuarantee,
+                Price = byGuaranteeDto.Price,
+                ProductCodeId = byGuaranteeDto.ProductCodeId,
+                RepairId = byGuaranteeDto.RepairId,
+                RepairStage = byGuaranteeDto.RepairStage
             };
         }
     }

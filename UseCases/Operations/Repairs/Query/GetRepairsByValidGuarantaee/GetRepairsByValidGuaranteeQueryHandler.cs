@@ -16,7 +16,7 @@ using UseCases.Models;
 
 namespace UseCases.Operations.Repairs.Query.GetRepairsByValidGuarantaee
 {
-    public class GetRepairsByValidGuaranteeQueryHandler:IRequestHandler<GetRepairsByGuaranteeQuery,List<RepairDto>>
+    public class GetRepairsByValidGuaranteeQueryHandler:IRequestHandler<GetRepairsByGuaranteeQuery,List<RepairByGuaranteeDto>>
     {
         
         private readonly IDbConnection _dbConnection;
@@ -24,9 +24,9 @@ namespace UseCases.Operations.Repairs.Query.GetRepairsByValidGuarantaee
         {
             _dbConnection =options.Value is null ? throw new ArgumentNullException(nameof(options)): new SqlConnection(options.Value.DefaultConnection);
         }
-        public async Task<List<RepairDto>> Handle(GetRepairsByGuaranteeQuery request, CancellationToken cancellationToken)
+        public async Task<List<RepairByGuaranteeDto>> Handle(GetRepairsByGuaranteeQuery request, CancellationToken cancellationToken)
         {
-            var repairs = await _dbConnection.QueryAsync<RepairDto>("spSupplier_GetByGuarantee", request, commandType:CommandType.StoredProcedure);
+            var repairs = await _dbConnection.QueryAsync<RepairByGuaranteeDto>("spSupplier_GetByGuarantee", request, commandType:CommandType.StoredProcedure);
             return repairs.ToList();
         }
     }

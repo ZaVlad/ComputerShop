@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <Folder Include="Operations\Customers\Command\" />
-    <Folder Include="Operations\Customers\Query\" />
     <Folder Include="Operations\Orders\Command\" />
     <Folder Include="Operations\Orders\Query\" />
     <Folder Include="Operations\Repairs\Command\" />

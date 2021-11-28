@@ -8,7 +8,7 @@ using Entities.Models.Enums;
 
 namespace UseCases.Models
 {
-   public class RepairDto
+   public class RepairByGuaranteeDto
     {
         public int RepairId { get; set; }
         public int GoodsTypeId { get; set; }
