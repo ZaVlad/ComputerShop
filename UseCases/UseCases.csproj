@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Operations\Customers\Command\" />
+    <Folder Include="Operations\Customers\Query\" />
+    <Folder Include="Operations\Orders\Command\" />
+    <Folder Include="Operations\Orders\Query\" />
+    <Folder Include="Operations\Repairs\Command\" />
+    <Folder Include="Operations\Suppliers\Command\" />
+    <Folder Include="Operations\Suppliers\Query\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="2.0.1" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj" />
+    <ProjectReference Include="..\Infrastracture.Implementation\DataAccess.MsSql.csproj" />
+    <ProjectReference Include="..\Infrastracture.Interface\Infrastracture.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>
